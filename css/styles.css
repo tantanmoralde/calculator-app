@@ -1,0 +1,102 @@
+/* ================GOOGLE FONTS===================== */
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+
+/* ==================VARIABLES===================== */
+
+:root {
+  /* ***********THEME 1*********** */
+  /* ---------Backgrounds--------- */
+  --theme1MainBG: hsl(222, 26%, 31%); /*(main background)*/
+  --theme1ToggleBG: hsl(
+    223,
+    31%,
+    20%
+  ); /*(toggle background, keypad background)*/
+  --theme1ScreenBG: hsl(224, 36%, 15%); /*(screen background)*/
+
+  /* -------------Keys----------- */
+  --theme1DesatBlue: hsl(225, 21%, 49%); /*(key background)*/
+  --theme1DesatBlueShadow: hsl(224, 28%, 35%); /*(key shadow)*/
+
+  --theme1Red: hsl(6, 63%, 50%); /*(key background, toggle)*/
+  --theme1DarkRed: hsl(6, 70%, 34%); /*(key shadow)*/
+
+  --theme1LightGrayishOrange: hsl(30, 25%, 89%); /*(key background)*/
+  --theme1GrayishOrange: hsl(
+    28,
+    16%,
+    65%
+  ); /*(key shadow)/*
+      
+      /* -------------Text------------ */
+  --theme1VeryDarkGrayishBlue: hsl(221, 14%, 31%);
+  --mainWhite: hsl(0, 0, 100%);
+
+  /* **********THEME 2************* */
+  /* ---------Backgrounds--------- */
+  --theme2MainBG: hsl(0, 0%, 90%); /*(main background)*/
+  --theme2ToggleBG: hsl(0, 5%, 81%); /*(toggle background, keypad background)*/
+  --theme2ScreenBG: hsl(0, 0%, 93%); /*(screen background)*/
+
+  /* -------------Keys----------- */
+  --theme2Cyan: hsl(185, 42%, 37%); /*(key background)*/
+  --theme2DarkerCyan: hsl(185, 58%, 25%); /*(key shadow)*/
+
+  --theme2Orange: hsl(25, 98%, 40%); /*(key background, toggle)*/
+  --theme2DarkOrange: hsl(25, 99%, 27%); /*(key shadow)*/
+
+  --theme2LightGrayishYellow: hsl(45, 7%, 89%); /*(key background)*/
+  --theme2DarkGrayishYellow: hsl(
+    35,
+    11%,
+    61%
+  ); /*(key shadow)/*
+        
+        /* -------------Text------------ */
+  --theme2VeryDarkGrayishYellow: hsl(60, 10%, 19%);
+
+  /* ***********THEME 3*********** */
+  /* ---------Backgrounds--------- */
+  --theme3MainBG: hsl(268, 75%, 9%); /*(main background)*/
+  --theme3BG: hsl(
+    268,
+    71%,
+    12%
+  ); /*(toggle background, keypad background, screen bg)*/
+
+  /* -------------Keys----------- */
+  --theme3Violet: hsl(281, 89%, 26%); /*(key background)*/
+  --theme3Magenta: hsl(285, 91%, 52%); /*(key shadow)*/
+
+  --theme3Cyan: hsl(176, 100%, 44%); /*(key background, toggle)*/
+  --theme3LightCyan: hsl(177, 92%, 70%); /*(key shadow)*/
+
+  --theme3DarkerViolet: hsl(268, 47%, 21%); /*(key background)*/
+  --theme3DarkerMagenta: hsl(
+    290,
+    70%,
+    36%
+  ); /*(key shadow)/*
+            
+            /* -------------Text------------ */
+  --theme3Yellow: hsl(52, 100%, 62%);
+  --theme3DarkBlue: hsl(198, 20%, 13%);
+}
+
+/* ==================GLOBAL===================== */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+body {
+  font-size: 2rem;
+  font-family: "Spartan", sans-serif;
+}
