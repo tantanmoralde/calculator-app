@@ -30,7 +30,7 @@
       
       /* -------------Text------------ */
   --theme1VeryDarkGrayishBlue: hsl(221, 14%, 31%);
-  --mainWhite: hsl(0, 0, 100%);
+  --mainWhite: hsl(0, 0%, 100%);
 
   /* **********THEME 2************* */
   /* ---------Backgrounds--------- */
@@ -99,4 +99,131 @@ html {
 body {
   font-size: 2rem;
   font-family: "Spartan", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background: var(--theme1MainBG);
+  display: grid;
+  place-items: center;
+}
+
+/* ==================Calc============ */
+.container {
+  max-width: 40.625rem;
+}
+/* ============Title================= */
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: flex-end; */
+  color: var(--mainWhite);
+  margin-bottom: 1.75rem;
+}
+.title {
+  font-size: 2.25rem;
+  align-self: flex-end;
+}
+
+.theme {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.875rem;
+}
+.theme p {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  padding-bottom: 0.3125rem;
+}
+/* theme btn */
+.theme-btn {
+  text-align: center;
+  display: flex;
+  width: 5.4375rem;
+  height: 1.9375rem;
+  justify-content: space-around;
+  align-items: center;
+}
+.theme-btn div {
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+/* slider */
+.slider {
+  width: 5.4375rem;
+  height: 1.9375rem;
+  background: var(--theme1ToggleBG);
+  border-radius: 1rem;
+  position: relative;
+}
+.round {
+  position: absolute;
+  width: 33.3%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--theme1Red);
+  left: 0;
+  top: 0;
+  border: solid 0.325rem var(--theme1ToggleBG);
+}
+
+/* ==========Screen========== */
+.screen-container {
+  margin-bottom: 1.75rem;
+}
+.screen {
+  width: 100%;
+  height: 9.625rem;
+  background: var(--theme1ScreenBG);
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--mainWhite);
+  font-size: 3.75rem;
+  font-family: "Spartan", sans-serif;
+  padding: 0 2.8125rem;
+  text-align: right;
+}
+
+/* ===========BODY============= */
+.calc-body {
+  width: 100%;
+  height: 36.125rem;
+  background: var(--theme1ToggleBG);
+  border-radius: 0.5rem;
+  padding: 2.4375rem 2.25rem;
+}
+
+button {
+  width: 7.625rem;
+  height: 4.5rem;
+  background: var(--theme1LightGrayishOrange);
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0px 5px 0px var(--theme1GrayishOrange);
+  cursor: pointer;
+  font-size: 2rem;
+  font-family: "Spartan", sans-serif;
+  color: var(--theme1VeryDarkGrayishBlue);
+}
+
+.btns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 2.125rem;
+}
+.reset,
+.del {
+  background: var(--theme1DesatBlue);
+  box-shadow: 0px 5px 0px var(--theme1DesatBlueShadow);
+  color: var(--mainWhite);
+}
+.reset {
+  width: 100%;
+  grid-column: 1/3;
+}
+.equals {
+  width: 100%;
+  grid-column: 3/5;
+  background: var(--theme1Red);
+  box-shadow: 0px 5px 0px var(--theme1DarkRed);
+  color: var(--mainWhite);
 }
