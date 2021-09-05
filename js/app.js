@@ -1,8 +1,13 @@
-// VARIABLES
+// GLOBAL VARIABLES
 const screen = document.getElementById("screen"),
-  btns = Array.from(document.getElementsByTagName("button"));
+  btns = Array.from(document.getElementsByTagName("button")),
+  body = document.body,
+  container = document.getElementById("container"),
+  themeBtn = Array.from(document.querySelector(".theme-btn").children);
 
-btns.map((btn) => {
+// CALCULATOR BUTTONS
+
+btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     switch (e.target.innerText) {
       case "DEL":
@@ -36,4 +41,46 @@ btns.map((btn) => {
         break;
     }
   });
+});
+
+// THEME SLIDER
+themeBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (btn.innerText === "2") {
+      body.style.backgroundColor = "var(--theme2MainBG)";
+      container.classList.add("theme2");
+      container.classList.remove("theme3");
+
+      // Add to localStorage
+      localStorage.setItem("theme", "theme2");
+    } else if (btn.innerText === "3") {
+      body.style.backgroundColor = "var(--theme3MainBG)";
+      container.classList.add("theme3");
+      container.classList.remove("theme2");
+
+      // Add to localStorage
+      localStorage.setItem("theme", "theme3");
+    } else {
+      body.style.backgroundColor = "var(--theme1MainBG)";
+      container.classList.remove("theme2", "theme3");
+
+      // Add to localStorage
+      localStorage.removeItem("theme");
+    }
+  });
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  const selectedTheme = localStorage.getItem("theme")
+    ? localStorage.getItem("theme")
+    : "";
+
+  if (selectedTheme === "theme2") {
+    body.style.backgroundColor = "var(--theme2MainBG)";
+    container.classList.add(selectedTheme);
+  }
+  if (selectedTheme === "theme3") {
+    body.style.backgroundColor = "var(--theme3MainBG)";
+    container.classList.add(selectedTheme);
+  }
 });
