@@ -6,9 +6,14 @@ const screen = document.getElementById("screen"),
   themeBtn = Array.from(document.querySelector(".theme-btn").children);
 
 // CALCULATOR BUTTONS
-
+let dotReset = true;
+let displayReset = false;
 btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
+    if (displayReset) {
+      screen.value = "";
+      displayReset = false;
+    }
     switch (e.target.innerText) {
       case "DEL":
         if (screen.value) {
@@ -29,6 +34,7 @@ btns.forEach((btn) => {
           try {
             screen.value = screen.value.replace(/^0+/, "");
             screen.value = eval(screen.value);
+            displayReset = true;
           } catch {
             screen.value = "Error!";
             setTimeout(() => (screen.value = ""), 1000);
@@ -37,7 +43,26 @@ btns.forEach((btn) => {
         break;
 
       default:
-        screen.value += e.target.innerText;
+        if (e.target.innerText >= 0) {
+          screen.value += e.target.innerText;
+        }
+        if (
+          e.target.innerText === "+" ||
+          e.target.innerText === "-" ||
+          e.target.innerText === "x" ||
+          e.target.innerText === "/"
+        ) {
+          screen.value += e.target.innerText;
+          dotReset = true;
+        }
+        if (e.target.innerText === ".") {
+          if (dotReset) {
+            screen.value += ".";
+            dotReset = false;
+          } else {
+            screen.value += "";
+          }
+        }
         break;
     }
   });
