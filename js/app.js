@@ -14,18 +14,24 @@ btns.forEach((btn) => {
       screen.value = "";
       displayReset = false;
     }
+
     switch (e.target.innerText) {
       case "DEL":
         if (screen.value) {
+          if (screen.value[screen.value.length - 1] === ".") {
+            dotReset = true;
+          }
           screen.value = screen.value.slice(0, -1);
         }
         break;
       case "RESET":
+        dotReset = true;
         if (screen.value) {
           screen.value = "";
         }
         break;
       case "=":
+        dotReset = true;
         if (screen.value) {
           if (screen.value.includes("x")) {
             let newValue = screen.value.replace(/x/g, "*");
@@ -56,7 +62,7 @@ btns.forEach((btn) => {
           dotReset = true;
         }
         if (e.target.innerText === ".") {
-          if (dotReset) {
+          if (dotReset === true) {
             screen.value += ".";
             dotReset = false;
           } else {
