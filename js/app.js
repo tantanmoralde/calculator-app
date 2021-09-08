@@ -58,7 +58,17 @@ btns.forEach((btn) => {
           e.target.innerText === "x" ||
           e.target.innerText === "/"
         ) {
-          screen.value += e.target.innerText;
+          if (
+            screen.value[screen.value.length - 1].includes("+") ||
+            screen.value[screen.value.length - 1].includes("-") ||
+            screen.value[screen.value.length - 1].includes("x") ||
+            screen.value[screen.value.length - 1].includes("/")
+          ) {
+            screen.value = screen.value.slice(0, -1);
+            screen.value += e.target.innerText;
+          } else {
+            screen.value += e.target.innerText;
+          }
           dotReset = true;
         }
         if (e.target.innerText === ".") {
